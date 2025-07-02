@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Chatbot 🤖</title>
+    <link href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap" rel="stylesheet">
+    <style>
+        body { background: #e3f2fd; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; }
+        .container { max-width: 520px; margin: 40px auto; background: #f5faff; border-radius: 18px; box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08); padding: 0 0 20px 0; }
+        .header { background: #1976d2; color: #fff; border-radius: 18px 18px 0 0; padding: 24px 32px 16px 32px; font-size: 2rem; font-weight: 700; letter-spacing: 1px; text-align: center; }
+        .chat-log { height: 400px; overflow-y: auto; padding: 24px 32px 0 32px; background: #f5faff; border-radius: 0 0 0 0; font-size: 1.1rem; }
+        .message { margin-bottom: 18px; line-height: 1.5; display: flex; align-items: flex-start; }
+        .avatar { width: 40px; height: 40px; border-radius: 50%; margin-right: 12px; object-fit: cover; box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10); background: #fff; }
+        .user .avatar { display: none; }
+        .user .sender { color: #1976d2; font-weight: bold; }
+        .user .text { color: #222; }
+        .bot .sender { color: #388e3c; font-weight: bold; }
+        .bot .text { color: #1b5e20; font-style: italic; }
+        .input-area { display: flex; padding: 16px 32px 0 32px; gap: 10px; }
+        .input-area input { flex: 1; padding: 12px 14px; border: 1px solid #b3c6e0; border-radius: 8px; font-size: 1rem; outline: none; background: #f8fafc; color: #222; }
+        .input-area button { background: #1976d2; color: #fff; border: none; border-radius: 8px; padding: 12px 24px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        .input-area button:hover { background: #1565c0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Mood Chatbot 🤖</div>
+        <div class="chat-log" id="chat-log">
+            <div class="message bot">
+                <img class="avatar" src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Bot Avatar">
+                <div>
+                    <span class="sender">MoodBot 🤖: </span>
+                    <span class="text">Hi! I'm your AI friend here to brighten your mood 🌈<br>How are you feeling today?</span>
+                </div>
+            </div>
+        </div>
+        <form class="input-area" id="chat-form" autocomplete="off">
+            <input type="text" id="user-input" placeholder="Type your message..." required />
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="chatbot.js"></script>
+</body>
+</html>
